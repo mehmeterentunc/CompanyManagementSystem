@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74247BCF-8B88-48FA-8D0B-C786C92589FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GAPtest_Desktop</RootNamespace>
+    <AssemblyName>GAPtest-Desktop</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\FormChangePasswords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormChangePasswords.Designer.cs">
+      <DependentUpon>FormChangePasswords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGCS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGCS.Designer.cs">
+      <DependentUpon>FormGCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Models\LogError.cs" />
+    <Compile Include="Models\Modelss.cs" />
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Suppliers.cs" />
+    <Compile Include="Models\Titles.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\LogErrorService.cs" />
+    <Compile Include="Services\ModelService.cs" />
+    <Compile Include="Services\OrderService.cs" />
+    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\SupplierService.cs" />
+    <Compile Include="Services\TitleService.cs" />
+    <Compile Include="Services\UserChangePasswordService.cs" />
+    <Compile Include="Services\UserRoleService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <EmbeddedResource Include="Forms\FormChangePasswords.resx">
+      <DependentUpon>FormChangePasswords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGCS.resx">
+      <DependentUpon>FormGCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Database\Diagrams\diagram.png" />
+    <Content Include="Database\Functions\fn_OtomatikBuyukHarf.sql" />
+    <Content Include="Database\Procedures\sp_CalisanEkle.sql" />
+    <Content Include="Database\Procedures\sp_CalisanGetir.sql" />
+    <Content Include="Database\Procedures\sp_CalisanGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_CalisanSil.sql" />
+    <Content Include="Database\Procedures\sp_KategoriEkle.sql" />
+    <Content Include="Database\Procedures\sp_KategoriGetir.sql" />
+    <Content Include="Database\Procedures\sp_KategoriGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_KategoriSil.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciActive.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciEkle.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciGetir.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciGiris.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciPassive.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciRolGetir.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciSifreDegistir.sql" />
+    <Content Include="Database\Procedures\sp_KullaniciSil.sql" />
+    <Content Include="Database\Procedures\sp_LogHataEkle.sql" />
+    <Content Include="Database\Procedures\sp_ModelEkle.sql" />
+    <Content Include="Database\Procedures\sp_ModelGetir.sql" />
+    <Content Include="Database\Procedures\sp_ModelGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_ModelSil.sql" />
+    <Content Include="Database\Procedures\sp_MusteriEkle.sql" />
+    <Content Include="Database\Procedures\sp_MusteriGetir.sql" />
+    <Content Include="Database\Procedures\sp_MusteriGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_MusteriSil.sql" />
+    <Content Include="Database\Procedures\sp_PozisyonEkle.sql" />
+    <Content Include="Database\Procedures\sp_PozisyonGetir.sql" />
+    <Content Include="Database\Procedures\sp_PozisyonGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_PozisyonSil.sql" />
+    <Content Include="Database\Procedures\sp_SiparisEkle.sql" />
+    <Content Include="Database\Procedures\sp_SiparisGetir.sql" />
+    <Content Include="Database\Procedures\sp_SiparisGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_SiparisSil.sql" />
+    <Content Include="Database\Procedures\sp_TedarikciEkle.sql" />
+    <Content Include="Database\Procedures\sp_TedarikciGetir.sql" />
+    <Content Include="Database\Procedures\sp_TedarikciGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_TedarikciSil.sql" />
+    <Content Include="Database\Procedures\sp_UrunEkle.sql" />
+    <Content Include="Database\Procedures\sp_UrunGetir.sql" />
+    <Content Include="Database\Procedures\sp_UrunGuncelle.sql" />
+    <Content Include="Database\Procedures\sp_UrunSil.sql" />
+    <Content Include="Database\Tables\Calisanlar.png" />
+    <Content Include="Database\Tables\Kategoriler.png" />
+    <Content Include="Database\Tables\Kullanicilar.png" />
+    <Content Include="Database\Tables\LogHata.png" />
+    <Content Include="Database\Tables\LogIslem.png" />
+    <Content Include="Database\Tables\Modeller.png" />
+    <Content Include="Database\Tables\Musteriler.png" />
+    <Content Include="Database\Tables\Pozisyonlar.png" />
+    <Content Include="Database\Tables\Siparisler.png" />
+    <Content Include="Database\Tables\Tedarikciler.png" />
+    <Content Include="Database\Tables\Urunler.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
