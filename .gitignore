@@ -5,6 +5,8 @@ out/
 
 # Visual Studio
 .vs/
+Visual Studio 2022/
+Visual Studio 2022Templates/
 *.user
 *.suo
 *.userosscache
