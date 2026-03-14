@@ -1,0 +1,21 @@
+# Build results
+bin/
+obj/
+out/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+*.tlog
+
+# NuGet
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
